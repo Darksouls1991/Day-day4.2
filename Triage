@@ -1,1 +1,40 @@
+================================================================================
+                    MATRIZ DE TRIAJE Y ESCALACIÓN (NIVEL 1)
+================================================================================
 
+1. PICO DE CPU / RAM (> 85% durante más de 5 minutos)
+--------------------------------------------------------------------------------
+• Verificación por consola:
+    $ top -b -n 1 | head -n 20
+    $ ps aux --sort=-%cpu | head -n 5
+• Diagnóstico:
+    - ¿El proceso pertenece a la app conocida (ej. nginx, docker)? 
+      --> FALSO POSITIVO: Registrar en logs.txt y mantener en observación.
+    - ¿El proceso corre desde /tmp, /var/tmp o con un usuario anónimo (ej. nobody)?
+      --> AMENAZA CONFIRMADA: Continuar a la Sección 3 (Congelamiento).
+
+2. ALTERACIÓN EN LOGS Y RED (Ataque Bruta / Malware)
+--------------------------------------------------------------------------------
+• Verificación por consola:
+    $ journalctl -u fail2ban --since "10 minutes ago"
+    $ netstat -tulpn | grep ESTABLISHED
+• Diagnóstico:
+    - Picos repentinos de tráfico entrante no identificado.
+    - Caída de servicios clave (UFW, Wazuh, Fail2ban).
+      --> ACCIÓN: Proceder a la Sección 3 (Congelamiento) y notificar por Slack.
+
+3. PROTOCOLO DE CONGELAMIENTO Y ESCALACIÓN (AISLAMIENTO)
+--------------------------------------------------------------------------------
+• Paso 1 (Pausar el proceso sospechoso sin borrarlo para análisis posterior):
+    $ kill -STOP <PID_SOSPECHOSO>
+
+• Paso 2 (Aislar el servidor de la red pública dejando solo acceso por VPN):
+    $ ufw default deny incoming
+    $ ufw default deny outgoing
+    $ ufw allow in on tailscale0
+    $ ufw reload
+
+• Paso 3 (Notificar al Administrador Nivel 2 vía Slack):
+    - Adjuntar las últimas 20 líneas de logs.txt.
+    - Reportar PID pausado, IP de origen del tráfico y estado del firewall.
+================================================================================
