@@ -1,1 +1,41 @@
-aaa
+8.10.2026 [00:00:00] -- STATUS: NORMAL
+• CPU: 4.2%  | RAM: 2.1 GB / 8.0 GB (26%) | Disk: 36% used (36 GB / 100 GB)
+• Network: Inbound 120 KB/s | Outbound 80 KB/s
+• Main process: nginx (PID 1120) - CPU 1.8%
+• Security: UFW [ACTIVE] | Fail2ban [ACTIVE] | Wazuh [OK] | Tailscale [OK]
+
+8.10.2026 [03:00:00] -- STATUS: NORMAL
+• CPU: 18.5% | RAM: 3.4 GB / 8.0 GB (42%) | Disk: 36% used
+• Network: Inbound 450 KB/s | Outbound 2.1 MB/s
+• Main process: restic [Backup] (PID 4012) - CPU 14.2%
+• Security: UFW [ACTIVE] | Fail2ban [ACTIVE] | Wazuh [OK] | Tailscale [OK]
+
+8.10.2026 [06:00:00] -- STATUS: NORMAL
+• CPU: 5.1%  | RAM: 2.3 GB / 8.0 GB (28%) | Disk: 36% used
+• Network: Inbound 210 KB/s | Outbound 190 KB/s
+• Main process: nginx (PID 1120) - CPU 2.1%
+• Security: UFW [ACTIVE] | Fail2ban [ACTIVE] | Wazuh [OK] | Tailscale [OK]
+
+8.10.2026 [09:00:00] -- STATUS: NORMAL
+• CPU: 14.8% | RAM: 3.8 GB / 8.0 GB (47%) | Disk: 36% used
+• Network: Inbound 1.2 MB/s | Outbound 3.4 MB/s
+• Main process: nginx (PID 1120) - CPU 8.4%
+• Security: UFW [ACTIVE] | Fail2ban [ACTIVE] | Wazuh [OK] | Tailscale [OK]
+
+8.10.2026 [12:00:00] -- STATUS: NORMAL
+• CPU: 28.3% | RAM: 4.5 GB / 8.0 GB (56%) | Disk: 37% used
+• Network: Inbound 3.8 MB/s | Outbound 8.9 MB/s
+• Main process: docker-container (PID 8901) - CPU 15.2%
+• Security: UFW [ACTIVE] | Fail2ban [ACTIVE] | Wazuh [OK] | Tailscale [OK]
+
+8.10.2026 [18:00:00] -- STATUS: NORMAL
+• CPU: 12.1% | RAM: 3.2 GB / 8.0 GB (40%) | Disk: 37% used
+• Network: Inbound 1.1 MB/s | Outbound 2.8 MB/s
+• Main process: nginx (PID 1120) - CPU 5.0%
+• Security: UFW [ACTIVE] | Fail2ban [ACTIVE] | Wazuh [OK] | Tailscale [OK]
+
+8.10.2026 [21:00:00] -- STATUS: NORMAL
+• CPU: 6.4%  | RAM: 2.5 GB / 8.0 GB (31%) | Disk: 37% used
+• Network: Inbound 340 KB/s | Outbound 280 KB/s
+• Main process: netdata (PID 3012) - CPU 2.0%
+• Security: UFW [ACTIVE] | Fail2ban [ACTIVE] | Wazuh [OK] | Tailscale [OK]
