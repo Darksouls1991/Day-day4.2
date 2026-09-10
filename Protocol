@@ -1,0 +1,17 @@
+Protocol
+
+1. external
+
+sudo ufw default deny incoming && sudo ufw default deny outgoing && sudo ufw reload
+
+2. internal
+
+sudo mount -o remount,ro -a
+
+2.1
+
+sudo mount -o remount,rw -a
+
+3. unknown
+
+sudo kill -STOP -1
